@@ -1,0 +1,21 @@
+<h2>Home</h2>
+<p>
+    {{controller.message}}
+</p>
+<hr />
+<form ng-submit="controller.save()">
+    <div>
+        <label>Name:</label>
+        <input ng-model="controller.product.name" />
+    </div>
+    <div>
+        <label>Price:</label>
+        <input ng-model="controller.product.price" />
+    </div>
+    <input type="submit" value="Save" />
+</form>
+<ul>
+    <li ng-repeat="product in controller.products">
+        {{product.name}} - {{product.price|currency}}
+    </li>
+</ul>

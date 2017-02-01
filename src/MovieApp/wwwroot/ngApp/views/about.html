@@ -1,0 +1,37 @@
+<h2>About</h2>
+<p>
+    {{controller.message}}
+</p>
+
+<form ng-submit="controller.save()">
+    <div>
+        <label>First Name:</label>
+        <input ng-model="controller.customer.FirstName" />
+    </div>
+      <div>
+        <label>Last Name:</label>
+        <input ng-model="controller.customer.LastName" />
+    </div>
+    <div>
+        <label>Shipping Street:</label>
+        <input ng-model="controller.customer.ShippingAddress.Street" />
+    </div>
+     <div>
+        <label>Shipping City:</label>
+        <input ng-model="controller.customer.ShippingAddress.City" />
+    </div>
+      <div>
+        <label>Billing Street:</label>
+        <input ng-model="controller.customer.BillingAddress.Street" />
+    </div>
+     <div>
+        <label>Billing City:</label>
+        <input ng-model="controller.customer.BillingAddress.City" />
+    </div>
+    <input type="submit" value="Save" />
+</form>
+<ul>
+    <li ng-repeat="customer in controller.customers">
+        {{customer.firstName}} - {{customer.lastName}}
+    </li>
+</ul>
